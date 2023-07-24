@@ -8,4 +8,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo '😇 test'
+      - name: ssh
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          USER: ${{ secrets.USER }}
+          HOST: ${{ secrets.HOST }}
+        run: echo "env test success"
