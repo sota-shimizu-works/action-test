@@ -20,3 +20,4 @@ jobs:
           script: |
             cd birth1015.xsrv.jp/public_html
             git clone https://github.com/sota-shimizu-works/action-test.git
+            cp -rf birth1015.xsrv.jp/public_html/action-test/src/* birth1015.xsrv.jp/public_html
