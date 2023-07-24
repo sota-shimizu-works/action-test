@@ -19,4 +19,4 @@ jobs:
           port: ${{ secrets.PORT }} # ポート番号
           script: |
             cd birth1015.xsrv.jp/public_html
-            git clone origin main
+            git clone https://github.com/sota-shimizu-works/action-test.git
