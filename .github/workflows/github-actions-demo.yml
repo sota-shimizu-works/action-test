@@ -1,21 +1,23 @@
-name: GitHub Actions Demo
-run-name: Deploy test 🚀
+name: Release to Production Environment
 on:
   push:
     branches:
-     - main
+      - main
+
 jobs:
-  deploy:
+  job1:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: ssh and deploy
         uses: appleboy/ssh-action@master # １
-          with: # ２ アクションの入力パラメータを指定
-            host: ${{ secrets.HOST }} # ホスト名
-            username: ${{ secrets.USER }} # SSH ユーザ名
-            key: ${{ secrets.SECRET_KEY }} # 秘密鍵の内容
-            port: ${{ secrets.PORT }} # ポート番号
-            script: |
-              cd /birth1015.xsrv.jp/public_html
-              git switch main
-              git pull origin main
+        with: # ２ アクションの入力パラメータを指定
+          host: ${{ secrets.HOST }} # ホスト名
+          username: ${{ secrets.USER }} # SSH ユーザ名
+          key: ${{ secrets.SECRET_KEY }} # 秘密鍵の内容
+          port: ${{ secrets.PORT }} # ポート番号
+          script: |
+            cd /path/to/git_current
+            git switch main
+            git pull origin main
+            php artisan migrate --force
