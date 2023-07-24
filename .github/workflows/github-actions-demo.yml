@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Deploy test 🚀
 on:
   push:
     branches:
@@ -13,4 +13,7 @@ jobs:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           USER: ${{ secrets.USER }}
           HOST: ${{ secrets.HOST }}
-        run: echo "env test success"
+        run: |
+          echo "$SECRET_KEY" > secret_key
+          chmod 600 secret_key
+          ssh -oStrictHostKeyChecking=no ${USER}@${HOST} -i secret_key "cd birth1015.xsrv.jp && sh ./.github/workflows/deploy.sh"
