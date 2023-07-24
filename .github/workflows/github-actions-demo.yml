@@ -18,6 +18,6 @@ jobs:
           key: ${{ secrets.SECRET_KEY }} # 秘密鍵の内容
           port: ${{ secrets.PORT }}
           script: |
-            cd birth1015.xsrv.jp/tmp
+            cd birth1015.xsrv.jp/tmp/action-test
             git pull https://github.com/sota-shimizu-works/action-test.git
             cp -rfp /birth1015.xsrv.jp/tmp/action-test/src/* /birth1015.xsrv.jp/public_html
