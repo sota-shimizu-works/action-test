@@ -9,6 +9,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: ssh and deploy
         uses: appleboy/ssh-action@master # １
         with: # ２ アクションの入力パラメータを指定
