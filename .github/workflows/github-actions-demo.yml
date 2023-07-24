@@ -10,12 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install SSH key for Deploy
-        uses: appleboy/ssh-action@master
-        with:
-          key: ${{ secrets.SECRET_KEY }}
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-          port: ${{ secrets.PORT }}
-          script: |
-            cd /birth1015.xsrv.jp/public_html/
-            git pull origin main
+        uses: mxschmitt/action-tmate@v3
+        run: |
+          echo "Ssh conecting ...."
