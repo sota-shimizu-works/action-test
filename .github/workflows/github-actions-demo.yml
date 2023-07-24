@@ -17,7 +17,6 @@ jobs:
           key: ${{ secrets.SECRET_KEY }} # 秘密鍵の内容
           port: ${{ secrets.PORT }} # ポート番号
           script: |
-            cd /path/to/git_current
+            cd birth1015.xsrv.jp/public_html
             git switch main
             git pull origin main
-            php artisan migrate --force
