@@ -19,5 +19,5 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd birth1015.xsrv.jp/tmp
-            git clone https://github.com/sota-shimizu-works/action-test.git
+            git pull https://github.com/sota-shimizu-works/action-test.git
             cp -rfp /birth1015.xsrv.jp/tmp/action-test/src/* /birth1015.xsrv.jp/public_html
