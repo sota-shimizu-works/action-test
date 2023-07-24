@@ -19,4 +19,4 @@ jobs:
           port: ${{ secrets.PORT }} # ポート番号
           script: |
             cd birth1015.xsrv.jp/public_html
-            git pull origin main
+            git clone origin main
