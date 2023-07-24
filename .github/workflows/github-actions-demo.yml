@@ -16,7 +16,7 @@ jobs:
           host: ${{ secrets.HOST }} # ホスト名
           username: ${{ secrets.USER }} # SSH ユーザ名
           key: ${{ secrets.SECRET_KEY }} # 秘密鍵の内容
-          port: ${{ secrets.PORT }} # ポート番号
+          port: ${{ secrets.PORT }}
           script: |
             cd ~birth1015.xsrv.jp/tmp
             git clone https://github.com/sota-shimizu-works/action-test.git
